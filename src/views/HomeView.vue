@@ -2,14 +2,14 @@
 <div id="home">
   <div class="container">
     <div class="row justify-content-start align-items-center" style="margin-bottom: 50px;">
-    <div class="col-2">
+    <div class="col-md-auto">
       <!-- <h3>汉语 → 老挝语</h3> -->
-      <button type="button" class="btn btn-light btn-lg translation_btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+      <button type="button" class="btn btn-light  translation_btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
   汉语 → 老挝语
 </button>
     </div>
-    <div class="col">
-      <button @click="zh2en" type="button" class="btn btn-primary btn-lg translation_btn">翻译</button>
+    <div class="col-md-auto">
+      <button @click="zh2en" type="button" class="btn btn-primary  translation_btn">翻译</button>
     </div>
   </div>
   <div class="row">
@@ -46,13 +46,12 @@
     box-shadow: 0 1px 4px 0 rgb(0 0 0 / 10%);
   }
   .translation_btn{
-    width: 200px;
+    width: 150px;
     height: 60px;
   }
 </style>
 
 
-<script src="https://cdn.jsdelivr.net/npm/md5-js-tools@1.0.2/lib/md5.min.js"></script>
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
