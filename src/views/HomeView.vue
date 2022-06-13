@@ -72,6 +72,8 @@ export default {
   },
   methods: {
     async zh2en(){
+      this.english = ''
+      this.laotain = ''
       var hash = MD5("20210420000791587" + this.chinese + '1435660288' + 'B7cR34b8eQDM1WcjASdP');
       //console.log(a);  // c3b93d3065f112b02ac70e09762469b0
       let url  = 'api/translate?q='+this.chinese+'&from=zh&to=en&appid=20210420000791587&salt=1435660288&sign='+ hash
@@ -84,14 +86,10 @@ export default {
       this.en2th()
     },
     async en2th(){
-      // console.log(this.english);
-      var hash = MD5("20210420000791587" + this.english + '1435660289' + 'B7cR34b8eQDM1WcjASdP');
-      // console.log(hash);
-      //console.log(a);  // c3b93d3065f112b02ac70e09762469b0
-      let url  = 'api/translate?q='+this.english+'&from=en&to=th&appid=20210420000791587&salt=1435660289&sign='+ hash
+      let url  = 'translation/' + this.english
       let translation_result = await axios.get(url)
       // var s = JSON.stringify();
-      let s = translation_result['data']['trans_result'][0]['dst']
+      let s = translation_result['data']
       console.log(translation_result)
       this.laotain = s
     },
